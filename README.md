@@ -5,6 +5,7 @@ interactive developer 님의 동영상을 따라해보는 프로젝트 그 첫 �
 [![](./interactive-developer.png)](https://www.youtube.com/c/cmiscm/videos)
 
 ![](./thumbnail.png)
+![](./preview.gif)
 
 # NEW!
 
