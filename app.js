@@ -1,4 +1,4 @@
-import { Wave } from './wave.js';
+import { WaveGroup } from './waveGroup.js';
 
 class App {
     constructor() {
@@ -6,7 +6,7 @@ class App {
         this.ctx = this.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
 
-        this.wave = new Wave();
+        this.waveGroup = new WaveGroup();
 
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
@@ -18,23 +18,20 @@ class App {
         this.stageWidth = document.body.clientWidth;
         this.stageHeight = document.body.clientHeight;
 
-        this.canvas.width = this.stagewidth * 2;
+        this.canvas.width = this.stageWidth * 2;
         this.canvas.height = this.stageHeight * 2;
         this.ctx.scale(2, 2);
 
-        this.wave.resize(this.stageWidth, this.stageHeight);
+        this.waveGroup.resize(this.stageWidth, this.stageHeight);
     }
 
     animate(t) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
-
-        this.wave.draw(this.ctx);
-
+        this.waveGroup.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
     }
 }
 
 window.onload = () => {
-    console.log('window loaded');
     window.app = new App();
 };
