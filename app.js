@@ -7,7 +7,6 @@ class App {
         document.body.appendChild(this.canvas);
 
         this.waveGroup = new WaveGroup();
-
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
